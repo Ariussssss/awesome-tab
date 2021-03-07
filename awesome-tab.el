@@ -877,7 +877,7 @@ influence of C1 on the result."
   "We need adjust awesome-tab's colors when user switch new theme."
   (let* ((bg-mode (frame-parameter nil 'background-mode))
          (select-tab-background (awesome-tab-get-select-background-color))
-         (unselect-tab-background (awesome-tab-get-unslect-background-color)))
+         (unselect-tab-background (awesome-tab-get-unselect-background-color)))
     (when (display-graphic-p)
       (setq awesome-tab-active-bar (awesome-tab-make-xpm awesome-tab-active-bar-width awesome-tab-active-bar-height)))
 
@@ -932,7 +932,7 @@ influence of C1 on the result."
             ((eq bg-mode 'light) awesome-tab-terminal-light-select-background-color))
       )))
 
-(defun awesome-tab-get-unslect-background-color ()
+(defun awesome-tab-get-unselect-background-color ()
   (let* ((bg-mode (frame-parameter nil 'background-mode)))
     (if (display-graphic-p)
         (cond ((eq bg-mode 'dark)
@@ -951,7 +951,7 @@ influence of C1 on the result."
   (let* ((sel (awesome-tab-selected-tab tabset))
          (tabs (awesome-tab-view tabset))
          (bg-mode (frame-parameter nil 'background-mode))
-         (header-line-color (awesome-tab-get-unslect-background-color))
+         (header-line-color (awesome-tab-get-unselect-background-color))
          atsel elts)
     ;; Track the selected tab to ensure it is always visible.
     (when awesome-tab--track-selected
